@@ -7,4 +7,5 @@ export default defineConfig({
         assetsDir: 'assets', // Directorio para assets dentro de 'dist'
         sourcemap: false, // Desactiva el sourcemap en producción
     },
+    root: 'src'
 });
