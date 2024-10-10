@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Conway</title>
+  <link rel="stylesheet" href="/game.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+<div class="controls">
+  <h1>Simulador de Conway</h1>
+  <p class="pMain">
+    El Juego de la Vida es un autómata celular creado por el matemático británico John Horton Conway en 1970. Este fascinante juego no es un juego en el sentido tradicional, ya que no hay jugadores ni objetivos; en su lugar, explora cómo se puede generar vida a partir de simples reglas.<br>
+    <b>¿Cómo Funciona?</b><br>
+    El juego se desarrolla en una cuadrícula bidimensional infinita, donde cada celda puede estar viva (representada por un cuadro oscuro) o muerta (representada por un cuadro claro). La evolución de las células se determina en pasos discretos, siguiendo cuatro reglas básicas: </p>
+  <ul>
+    <li>Supervivencia: Una célula viva con dos o tres vecinas vivas permanece viva en la siguiente generación.</li>
+    <li>Muerte: Una célula viva con menos de dos vecinas vivas muere por soledad, y una célula viva con más de tres vecinas vivas muere por sobrepoblación.</li>
+    <li>Nacimiento: Una célula muerta con exactamente tres vecinas vivas se convierte en una célula viva en la siguiente generación.</li>
+    <li>Inmutabilidad: Las células que no cumplen con las condiciones de supervivencia o nacimiento permanecen en su estado actual.</li>
+  </ul>
+  <p class="pMain">
+  <b>Explora y Experimenta</b><br>
+  En este simulador, puedes experimentar con diferentes configuraciones iniciales y observar cómo las células interactúan entre sí a lo largo de múltiples generaciones. Cambia la disposición de las células y ve cómo surgen patrones complejos a partir de simples comienzos.
+  <br>
+  <b>¡Comienza a jugar!</b>
+  Utiliza los botones de Iniciar y Detener para comenzar la simulación y detenerla en cualquier momento. ¡Descubre cómo la vida puede surgir de la simplicidad y maravíllate con los patrones que emergen!
+  </p>
+  <button id="startButton">Iniciar</button>
+  <button id="pauseButton" disabled>Pausar</button>
+  <button id="stopButton" disabled>Detener</button>
+  <label for="speedRange">Velocidad de la simulación:</label>
+  <input type="range" id="speedRange" min="100" max="1000" value="500">
+
+  <label for="patternCategory">Selecciona una categoría:</label>
+  <select id="patternCategory">
+    <option value="">--Selecciona una categoría--</option>
+    <option value="oscillators">Osciladores</option>
+    <option value="spaceships">Naves espaciales</option>
+  </select>
+
+  <label for="patternSelect">Selecciona un patrón:</label>
+  <select id="patternSelect" disabled>
+    <option value="">--Selecciona un patrón--</option>
+  </select>
+
+  <button id="startPresetButton" disabled>Iniciar preset</button>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
